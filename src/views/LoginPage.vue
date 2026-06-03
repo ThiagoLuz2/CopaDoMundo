@@ -13,5 +13,6 @@
 </template>
 
 <script setup lang="ts">
+import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle } from '@ionic/vue'
 import LoginForm from '@/components/LoginForm.vue'
 </script>

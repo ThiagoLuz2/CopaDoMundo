@@ -13,5 +13,6 @@
 </template>
 
 <script setup lang="ts">
+import { IonContent, IonHeader, IonPage, IonToolbar, IonTitle } from '@ionic/vue'
 import RegisterForm from '@/components/RegisterForm.vue'
 </script>

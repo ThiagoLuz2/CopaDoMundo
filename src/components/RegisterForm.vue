@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonLabel } from '@ionic/vue'
 import { useAuth } from '@/composables/useAuth'
 
 const nome = ref('')
@@ -44,6 +45,9 @@ function registrar() {
   }
   cadastrar(nome.value, email.value, senha.value)
   window.alert('Cadastro realizado com sucesso')
+  nome.value = ''
+  email.value = ''
+  senha.value = ''
   router.push('/login')
 }
 </script>

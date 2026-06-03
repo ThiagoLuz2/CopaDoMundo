@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonLabel } from '@ionic/vue'
 import { useAuth } from '@/composables/useAuth'
 
 const email = ref('')
@@ -34,6 +35,7 @@ function resetar() {
   }
   resetarSenha(email.value)
   window.alert('Instruções enviadas para o seu e-mail')
+  email.value = ''
   router.push('/login')
 }
 </script>

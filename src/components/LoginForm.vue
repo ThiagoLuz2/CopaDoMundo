@@ -28,6 +28,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonInput, IonItem, IonLabel } from '@ionic/vue'
 import { useAuth } from '@/composables/useAuth'
 
 const email = ref('')
@@ -36,11 +37,18 @@ const router = useRouter()
 const { login } = useAuth()
 
 function entrar() {
+  if (!email.value || !senha.value) {
+    window.alert('Preencha todos os campos')
+    return
+  }
+  
   const sucesso = login(email.value, senha.value)
   if (sucesso) {
+    email.value = ''
+    senha.value = ''
     router.push('/tabs/tab1')
   } else {
-    window.alert('Dados inválidos')
+    window.alert('E-mail ou senha inválidos')
   }
 }
 </script>

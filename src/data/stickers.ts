@@ -16,5 +16,5 @@ export const stickers: Sticker[] = [
   { id: 7, nome: 'Salah', selecao: 'Egito', foto: 'https://i.pravatar.cc/150?img=7', coletada: false },
   { id: 8, nome: 'De Bruyne', selecao: 'Bélgica', foto: 'https://i.pravatar.cc/150?img=8', coletada: true },
   { id: 9, nome: 'Lewandowski', selecao: 'Polônia', foto: 'https://i.pravatar.cc/150?img=9', coletada: false },
-  { id: 10, nome: 'Salah', selecao: 'Egito', foto: 'https://i.pravatar.cc/150?img=10', coletada: false }
+  { id: 10, nome: 'Hazard', selecao: 'Bélgica', foto: 'https://i.pravatar.cc/150?img=10', coletada: true },
 ]

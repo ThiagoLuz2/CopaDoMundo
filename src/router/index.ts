@@ -7,6 +7,7 @@ import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
 import AlbumPage from '@/views/AlbumPage.vue'
 import CollectionPage from '@/views/CollectionPage.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
+import { useAuth } from '@/composables/useAuth'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -52,6 +53,22 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes,
+})
+
+// Guard para verificar autenticação
+router.beforeEach((to, from, next) => {
+  const auth = useAuth()
+  const rotasPublicas = ['/login', '/register', '/reset-password']
+  const ehRotaPublica = rotasPublicas.includes(to.path)
+  const estaAutenticado = auth.usuario.value !== null
+
+  if (ehRotaPublica) {
+    next()
+  } else if (estaAutenticado) {
+    next()
+  } else {
+    next('/login')
+  }
 })
 
 export default router

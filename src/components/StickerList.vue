@@ -20,7 +20,7 @@ interface Figurinha {
   coletada: boolean
 }
 
-const { figurinhas } = defineProps<{ figurinhas: Figurinha[] }>()
+defineProps<{ figurinhas: Figurinha[] }>()
 const emit = defineEmits<{
   (event: 'toggle', id: number): void
 }>()
