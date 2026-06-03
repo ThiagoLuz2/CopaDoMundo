@@ -1,0 +1,7 @@
+{
+  "name": "CopaDoMundo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
