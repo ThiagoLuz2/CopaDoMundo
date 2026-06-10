@@ -22,6 +22,10 @@
         </ion-card-content>
       </ion-card>
 
+      <ion-button expand="block" class="ion-margin-bottom" @click="router.push('/about')">
+        Sobre
+      </ion-button>
+
       <ion-button expand="block" color="danger" @click="sair">
         Sair
       </ion-button>

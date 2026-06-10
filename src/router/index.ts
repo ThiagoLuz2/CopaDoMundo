@@ -7,6 +7,7 @@ import ResetPasswordPage from '@/views/ResetPasswordPage.vue'
 import AlbumPage from '@/views/AlbumPage.vue'
 import CollectionPage from '@/views/CollectionPage.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
+import AboutPage from '@/views/AboutPage.vue'
 import { useAuth } from '@/composables/useAuth'
 
 const routes: Array<RouteRecordRaw> = [
@@ -25,6 +26,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/reset-password',
     component: ResetPasswordPage,
+  },
+  {
+    path: '/about',
+    component: AboutPage,
   },
   {
     path: '/tabs',
