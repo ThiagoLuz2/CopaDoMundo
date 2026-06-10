@@ -3,6 +3,9 @@
     <div class="figurinha-borda">
       <div class="topo-figurinha">
         <ion-badge class="posicao" color="warning">#{{ figurinha.id }}</ion-badge>
+        <ion-badge class="raridade" :color="corRaridade(figurinha.raridade)">
+          {{ rotuloRaridade(figurinha.raridade) }}
+        </ion-badge>
       </div>
 
       <div class="foto-jogador">
@@ -38,10 +41,27 @@ interface Figurinha {
   selecao: string
   foto: string
   coletada: boolean
+  raridade: 'comum' | 'rara' | 'brilhante'
 }
 
 defineProps<{ figurinha: Figurinha }>()
+
 defineEmits(['toggle'])
+
+const corRaridade = (raridade: Figurinha['raridade']) => {
+  switch (raridade) {
+    case 'brilhante':
+      return 'warning'
+    case 'rara':
+      return 'tertiary'
+    default:
+      return 'medium'
+  }
+}
+
+const rotuloRaridade = (raridade: Figurinha['raridade']) => {
+  return raridade === 'rara' ? 'Rara' : raridade === 'brilhante' ? 'Brilhante' : 'Comum'
+}
 </script>
 
 <style scoped>
@@ -72,14 +92,22 @@ defineEmits(['toggle'])
 
 .topo-figurinha {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 8px;
 }
 
-.posicao {
+.posicao,
+.raridade,
+.raridade {
   font-weight: 800;
   font-size: 12px;
   padding: 4px 8px;
+}
+
+.raridade {
+  text-transform: capitalize;
 }
 
 .foto-jogador {

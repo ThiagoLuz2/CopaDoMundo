@@ -18,6 +18,7 @@ interface Figurinha {
   selecao: string
   foto: string
   coletada: boolean
+  raridade: 'comum' | 'rara' | 'brilhante'
 }
 
 defineProps<{ figurinhas: Figurinha[] }>()
