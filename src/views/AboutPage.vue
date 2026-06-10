@@ -20,10 +20,10 @@
           <p>Aplicativo para gerenciar sua coleção de figurinhas da Copa do Mundo.</p>
 
           <ion-list lines="full">
-            <ion-item href="https://ionicframework.com/terms" target="_blank" rel="noopener noreferrer">
+            <ion-item href="https://ionic.io/tos" target="_blank" rel="noopener noreferrer">
               <ion-label>Termos de uso</ion-label>
             </ion-item>
-            <ion-item href="https://ionicframework.com/privacy" target="_blank" rel="noopener noreferrer">
+            <ion-item href="https://ionic.io/privacy" target="_blank" rel="noopener noreferrer">
               <ion-label>Política de privacidade</ion-label>
             </ion-item>
           </ion-list>
